@@ -1,0 +1,729 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumpster Bros - Dumpsta Bros - Geneva's #1 Dump Trailer Rental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --olive: #556B2F;
+            --brown: #4B3621;
+            --charcoal: #2F2F2F;
+            --orange: #FF6B35;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url('https://i.postimg.cc/XNPTbgMJ/temp-Imageu6-Tc-Bw.avif') repeat;
+            background-size: contain;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, var(--charcoal), var(--brown));
+            transition: background 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav.scrolled {
+            background: var(--charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(85, 107, 47, 0.7), rgba(47, 47, 47, 0.7)),
+                        url('https://i.postimg.cc/RZY3182m/temp-Image0-YBe-Ka.avif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Grid Sections */
+        .grid-section {
+            padding: 5rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .grid-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: rgba(47, 47, 47, 0.9);
+            color: white;
+        }
+
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <div class="brand">Dumpsta Bros</div>
+    </nav>
+
+    <section class="hero">
+        <h1>Youthful. Flexible. Reliable.</h1>
+        <h2>Geneva's #1 Dump Trailer Rental</h2>
+        <a href="/pricing" class="cta-button">View Pricing</a>
+    </section>
+
+    <section class="grid-section">
+        <h2>Why Choose Dumpster Bros?</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <h3>Young & Energetic Team</h3>
+                <p>Founded by Geneva's youth, bringing fresh energy to waste management.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Flexible Solutions</h3>
+                <p>Adaptable rental periods and sizes to match your specific needs.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Local Expertise</h3>
+                <p>Deep roots in Geneva, understanding our community's unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonial-carousel">
+            <div class="testimonial active">
+                <p>"The young team at Dumpster Bros was professional and prompt. Best service in Geneva!"</p>
+                <cite>- John D.</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Excellent service and very competitive prices. Will definitely use again!"</p>
+                <cite>- Sarah M.</cite>
+            </div>
+            <div class="testimonial">
+                <p>"They made my renovation project so much easier. Highly recommended!"</p>
+                <cite>- Mike R.</cite>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animation for grid items
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.grid-item').forEach((item) => {
+            observer.observe(item);
+        });
+
+        // Enhanced testimonial carousel
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        function showTestimonial(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            testimonials[index].classList.add('active');
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Add click handlers for navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
+        });
+
+        // Add click handler for CTA button
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            window.location.href = '/pricing';
+        });
+    </script>
+</body>
+</html>
+
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Dumpster Bros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Include base styles from index.html */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card.popular {
+            border: 2px solid var(--orange);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: var(--orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .how-it-works {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include navigation from index.html -->
+
+    <section class="services-grid">
+        <div class="service-card" onclick="window.location.href='/pricing#10yard'">
+            <h3>10-Yard Trailer</h3>
+            <p>Perfect for small cleanouts and residential projects</p>
+        </div>
+        <div class="service-card popular" onclick="window.location.href='/pricing#20yard'">
+            <span class="popular-badge">Most Popular</span>
+            <h3>20-Yard Trailer</h3>
+            <p>Ideal for medium renovations and commercial use</p>
+        </div>
+        <div class="service-card" onclick="window.location.href='/pricing#30yard'">
+            <h3>30-Yard Trailer</h3>
+            <p>Best for construction sites and large projects</p>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step" onclick="window.location.href='/contact'">
+                <h3>1. Book</h3>
+                <p>Choose your trailer size and rental period</p>
+            </div>
+            <div class="step" onclick="window.location.href='/contact'">
+                <h3>2. Delivery</h3>
+                <p>We'll deliver to your location in Geneva</p>
+            </div>
+            <div class="step" onclick="window.location.href='/contact'">
+                <h3>3. Pickup</h3>
+                <p>We'll collect when you're done</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add click handlers for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const size = card.querySelector('h3').textContent.toLowerCase().replace(/[^0-9]/g, '');
+                window.location.href = `/pricing#${size}yard`;
+            });
+        });
+
+        // Add click handlers for steps
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', () => {
+                window.location.href = '/contact';
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- pricing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Dumpster Bros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Include base styles from index.html */
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .faq {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5rem 2rem;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include navigation from index.html -->
+
+    <section class="pricing-cards">
+        <div id="10yard" class="price-card" onclick="window.location.href='/contact'">
+            <h3>10-Yard Trailer</h3>
+            <p class="price">$299/week</p>
+            <ul>
+                <li>Ideal for small projects</li>
+                <li>Free delivery in Geneva</li>
+                <li>Weekly rental</li>
+            </ul>
+        </div>
+        <div id="20yard" class="price-card" onclick="window.location.href='/contact'">
+            <h3>20-Yard Trailer</h3>
+            <p class="price">$399/week</p>
+            <ul>
+                <li>Perfect for medium projects</li>
+                <li>Free delivery in Geneva</li>
+                <li>Weekly rental</li>
+            </ul>
+        </div>
+        <div id="30yard" class="price-card" onclick="window.location.href='/contact'">
+            <h3>30-Yard Trailer</h3>
+            <p class="price">$499/week</p>
+            <ul>
+                <li>Best for large projects</li>
+                <li>Free delivery in Geneva</li>
+                <li>Weekly rental</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How long can I rent a trailer?</h3>
+            <div class="faq-answer">
+                <p>Our standard rental period is one week, but we offer flexible arrangements for shorter or longer periods.</p>
+            </div>
+        </div>
+        <!-- Add more FAQ items -->
+    </section>
+
+    <script>
+        // Add click handlers for FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Add click handlers for pricing cards
+        document.querySelectorAll('.price-card').forEach(card => {
+            card.addEventListener('click', () => {
+                window.location.href = '/contact';
+            });
+        });
+
+        // Scroll to specific trailer size if URL contains hash
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Dumpsta Bros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Include base styles from index.html */
+        
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:valid + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:valid + label {
+            transform: translateY(-1.5rem);
+            font-size: 0.8rem;
+            color: var(--orange);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .map-container {
+            height: 300px;
+            margin-top: 2rem;
+        }
+
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include navigation from index.html -->
+
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+                <div class="success-message">Thank you! We'll get back to you soon.</div>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Geneva, AL</p>
+            <p>Phone: <a href="tel:5551234567">(555) 123-4567</a></p>
+            <p>Email: <a href="mailto:info@dumpstabros.com">info@dumpstabros.com</a></p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27383.08460344!2d-85.87!3d31.03!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888ee458738e3c7f%3A0x6d0f20d5c6f7c7b7!2sGeneva%2C%20AL!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Show success message
+            document.querySelector('.success-message').style.display = 'block';
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                document.querySelector('.success-message').style.display = 'none';
+            }, 3000);
+        });
+
+        // Add floating label effect
+        document.querySelectorAll('.form-group input, .form-group textarea').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.labels[0].style.transform = 'translateY(-1.5rem)';
+                element.labels[0].style.fontSize = '0.8rem';
+                element.labels[0].style.color = 'var(--orange)';
+            });
+
+            element.addEventListener('blur', () => {
+                if (!element.value) {
+                    element.labels[0].style.transform = '';
+                    element.labels[0].style.fontSize = '';
+                    element.labels[0].style.color = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
